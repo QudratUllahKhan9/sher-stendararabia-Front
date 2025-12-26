@@ -1,0 +1,129 @@
+/* Reset margins to ensure full height works */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* 1. MAIN CONTAINER (Centers the form) */
+.form-container {
+  display: flex;
+  justify-content: center; /* Centers Horizontally (Left-Right) */
+  align-items: center;     /* Centers Vertically (Top-Bottom) */
+  min-height: 100vh;       /* Takes full screen height */
+  width: 100%;
+  background-color: #f4f7f6; /* Light grey background */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* 2. CARD DESIGN */
+.form-card {
+  background: white;
+  padding: 40px;
+  width: 100%;
+  max-width: 700px; /* Limits width on big screens */
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Header Styles */
+.form-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-header h2 {
+  color: #333;
+  margin: 0;
+  font-size: 28px;
+}
+
+.form-header p {
+  color: #777;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+/* 3. GRID LAYOUT (2 Columns) */
+.input-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 20px; /* Space between inputs */
+}
+
+/* Input Wrapper */
+.input-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-box label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 8px;
+  text-align: center; /* Label ko bhi center kiya */
+}
+
+/* 4. INPUT FIELDS STYLING */
+.input-box input {
+  padding: 12px;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+  
+  /* INPUT TEXT CENTER MEIN AAYEGA */
+  text-align: center; 
+}
+
+.input-box input:focus {
+  border-color: #007bff;
+  background-color: #fff;
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.1);
+}
+
+/* Date Input specific */
+input[type="date"] {
+  color: #555;
+  cursor: pointer;
+}
+
+/* 5. SUBMIT BUTTON */
+.submit-btn {
+  width: 100%;
+  margin-top: 30px;
+  padding: 15px;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+/* 6. MOBILE RESPONSIVE (1 Column) */
+@media (max-width: 600px) {
+  .input-grid {
+    grid-template-columns: 1fr; /* Single column on mobile */
+  }
+  
+  .form-card {
+    padding: 25px;
+  }
+}
